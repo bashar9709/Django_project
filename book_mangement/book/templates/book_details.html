@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Book Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">Category</th>
+        <th scope="col">First Publish</th>
+        <th scope="col">Last Publish</th>
+        <th scope="col">Action</th> 
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row">{{david.id}}</td>
+        <td scope="row">{{david.book_name}}</td>
+        <td scope="row">{{david.author}}</td>
+        <td scope="row">{{david.category}}</td>
+        <td scope="row">{{david.first_pub}}</td>
+        <td scope="row">{{david.last_pub}}</td>
+        <td>
+          <a href="{% url 'edit_book' pk=david.id %}" class="btn btn-success btn-sm">Edit</a>
+          <a href="{% url 'delete_book' pk=david.id %}" class="btn btn-danger btn-sm">Delate</a>
+        </td> 
+  
+      </tr>
+    </tbody>
+  </table>
+
+  {% endblock %}
